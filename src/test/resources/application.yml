@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: post-code
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:postcode_test
+    password: "password"
+    username: "sa"
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  flyway:
+    url: jdbc:h2:mem:postcode_test
+    schemas: postcode
+    user: "password"
+    password: "sa"
+    #this will only create the db and exclude initial data insert.
+    locations: classpath:db/migration/V1__Initial.sql
+
